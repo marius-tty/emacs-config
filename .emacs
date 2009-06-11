@@ -51,6 +51,7 @@
 (load-file ".emacs.d/perly.el")
 
 (global-set-key "\C-l" 'compile)
+(global-set-key "\C-q"  'viper-intercept-ESC-key)
 (global-set-key [C-S-l] 'recompile)
 (global-set-key [C-S-e] 'next-error)
 ;; Viper mode stuff
