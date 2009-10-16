@@ -3,7 +3,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(indent-tabs-mode nil)
+ '(backup-by-copying nil)
  '(confirm-kill-emacs (quote yes-or-no-p))
  '(cperl-break-one-line-blocks-when-indent nil)
  '(cperl-clobber-lisp-bindings t)
@@ -17,6 +17,8 @@
  '(cperl-lazy-help-time 2)
  '(cperl-lineup-step 4)
  '(cperl-under-as-char t)
+ '(indent-tabs-mode nil)
+ '(make-backup-files nil)
  '(perl-indent-level 4)
  '(ps-font-size (quote (10 . 10)))
  '(ps-header-font-size (quote (8 . 10)))
@@ -26,9 +28,9 @@
  '(ps-line-number t)
  '(ps-line-number-start 1)
  '(ps-line-number-step 1)
+ '(ps-lpr-command "kprinter")
  '(ps-paper-type (quote a4))
  '(ps-print-header-frame nil)
- '(ps-lpr-command "kprinter")
  '(tab-width 8)
  '(tool-bar-mode nil)
  '(transient-mark-mode t))
@@ -58,5 +60,12 @@
 (define-key viper-vi-intercept-map "e" 'next-error)
 
 (defalias 'perl-mode 'cperl-mode)
+(setq compilation-scroll-output t)
 (require 'inf-haskell)
 (load-file ".emacs.d/nvb.el")
+
+
+;; js2-mode
+;;(load-file ".emacs.d/js2-20090723b.el")
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
