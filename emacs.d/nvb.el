@@ -1,6 +1,6 @@
 (message "Loading nvb utilities...")
 (defun nvb-base () 
-  "/home/marius/git/nvb")
+  "/home/marius/git/nvb2")
 
 (defun project-file-switch-file (relfilename)
   (let* ((is-test (string-match "^Lib/Test/" relfilename))
@@ -59,6 +59,9 @@
 ;; autoload mason.
 ; (add-to-list 'auto-mode-alist '( (concat "\\`" (nvb-base) "/Www/") . html-mode))
 ; (mmm-add-mode-ext-class 'html-mode nil 'mason)
+
+(add-to-list 'compilation-search-path (nvb-base))
+(add-to-list 'compilation-search-path (concat (nvb-base) "/t/"))
 
 (global-set-key "\C-cg" 'project-grep)
 (global-set-key "\C-ct" 'project-test)

@@ -28,7 +28,7 @@
  '(ps-line-number t)
  '(ps-line-number-start 1)
  '(ps-line-number-step 1)
- '(ps-lpr-command "kprinter")
+ '(ps-lpr-command "xpp")
  '(ps-paper-type (quote a4))
  '(ps-print-header-frame nil)
  '(tab-width 8)
