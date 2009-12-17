@@ -24,12 +24,12 @@
  '(ps-header-font-size (quote (8 . 10)))
  '(ps-header-title-font-size (quote (10 . 12)))
  '(ps-left-footer (quote (ps-get-buffer-name)))
- '(ps-left-header (quote (ps-get-buffer-name)))
+; '(ps-left-header (quote (ps-get-buffer-name)))
  '(ps-line-number t)
  '(ps-line-number-start 1)
  '(ps-line-number-step 1)
+; '(ps-lpr-command "/usr/bin/lpr -o media=A4 -o fit-to-page")
  '(ps-lpr-command "xpp")
- '(ps-paper-type (quote a4))
  '(ps-print-header-frame nil)
  '(tab-width 8)
  '(tool-bar-mode nil)
@@ -62,10 +62,20 @@
 (defalias 'perl-mode 'cperl-mode)
 (setq compilation-scroll-output t)
 (require 'inf-haskell)
-(load-file ".emacs.d/nvb.el")
+(load-file "/home/marius/git/emacs-config/emacs.d/nvb.el")
 
 
 ;; js2-mode
 ;;(load-file ".emacs.d/js2-20090723b.el")
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+
+;; remember mode
+(org-remember-insinuate)
+(setq org-directory "~/orgfiles/")
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+(define-key global-map "\C-cr" 'org-remember)
+
+;; yasnippet
+(require 'yasnippet)

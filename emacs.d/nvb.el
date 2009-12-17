@@ -57,8 +57,8 @@
   (compile (concat "cd " (nvb-base) " && . ./export_env && prove -v lib-nvb-*.t")))
 
 ;; autoload mason.
-; (add-to-list 'auto-mode-alist '( (concat "\\`" (nvb-base) "/Www/") . html-mode))
-; (mmm-add-mode-ext-class 'html-mode nil 'mason)
+;(add-to-list 'auto-mode-alist '( (concat "\\`" (nvb-base) "/Www/") . html-mode))
+(mmm-add-mode-ext-class 'html-mode nil 'mason)
 
 (add-to-list 'compilation-search-path (nvb-base))
 (add-to-list 'compilation-search-path (concat (nvb-base) "/t/"))
