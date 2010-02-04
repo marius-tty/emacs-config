@@ -2,6 +2,9 @@
 (defun nvb-base () 
   "/home/marius/git/nvb2")
 
+(defun nvb-test-base ()
+  (concat (nvb-base) "/t") )
+
 (defun project-file-switch-file (relfilename)
   (let* ((is-test (string-match "^Lib/Test/" relfilename))
          (is-template (string-match "^Templates/Controller/URI/" relfilename))
@@ -52,9 +55,17 @@
   (interactive "s")
   (grep (concat "cd " (nvb-base) " && . ./export_env && ./grep-nvb '" s "'" )))
 
-(defun project-test () "Test project."
+
+(defun nvb-runtest (s) "Test project."
+  (interactive "s")
+  (compile (concat "cd " (nvb-test-base) " && . ../export_env && prove "
+s )))
+
+
+(defun nvb-tidy-and-statler ()
   (interactive "")
-  (compile (concat "cd " (nvb-base) " && . ./export_env && prove -v lib-nvb-*.t")))
+  (let ((compilation-buffer-name-function (lambda (foo) "*tidy-and-statler-modified*")))
+    (compile (concat "cd " (nvb-base) " && . ./export_env && ./tidy_and_statler_modified" ))))
 
 ;; autoload mason.
 ;(add-to-list 'auto-mode-alist '( (concat "\\`" (nvb-base) "/Www/") . html-mode))
@@ -64,5 +75,6 @@
 (add-to-list 'compilation-search-path (concat (nvb-base) "/t/"))
 
 (global-set-key "\C-cg" 'project-grep)
-(global-set-key "\C-ct" 'project-test)
+(global-set-key "\C-ct" 'nvb-runtest)
+(global-set-key "\C-c\C-s" 'nvb-tidy-and-statler) 
 (global-set-key "\C-cw" 'project-switch-file-with-test)
