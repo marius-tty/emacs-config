@@ -28,11 +28,14 @@
  '(ps-line-number t)
  '(ps-line-number-start 1)
  '(ps-line-number-step 1)
-; '(ps-lpr-command "/usr/bin/lpr -o media=A4 -o fit-to-page")
+; '(ps-lpr-command "/usr/bin/lpr")
+; '(ps-lpr-switches "-o media=A4 -o fit-to-page")
  '(ps-lpr-command "xpp")
  '(ps-print-header-frame nil)
  '(tab-width 8)
  '(tool-bar-mode nil)
+ '(scroll-bar-mode nil)
+ '(menu-bar-mode nil)
  '(transient-mark-mode t))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
@@ -54,6 +57,7 @@
 (global-set-key "\C-q"  'viper-intercept-ESC-key)
 (global-set-key [C-S-l] 'recompile)
 (global-set-key [C-S-e] 'next-error)
+
 ;; Viper mode stuff
 (setq viper-mode t)
 (require 'viper)
@@ -79,3 +83,4 @@
 
 ;; yasnippet
 (require 'yasnippet)
+
