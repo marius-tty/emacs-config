@@ -52,11 +52,11 @@
 (set-default-font '"-adobe-courier-medium-r-normal--18-*-*-*-*-*-*-*")
 
 (which-function-mode t)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (global-set-key "\C-l" 'compile)
 (global-set-key "\C-q"  'viper-intercept-ESC-key)
-(global-set-key [C-S-l] 'recompile)
-(global-set-key [C-S-e] 'next-error)
+(global-set-key "\C-c\C-v" 'magit-status)
 
 ;; Viper mode stuff
 (setq viper-mode t)

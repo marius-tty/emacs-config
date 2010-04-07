@@ -53,7 +53,7 @@
 
 (defun project-grep (s) "Grep int project."
   (interactive "s")
-  (grep (concat "cd " (nvb-base) " && . ./export_env && ./grep-nvb '" s "'" )))
+  (grep (concat "cd " (nvb-base) " && . ./export_env && ./bin/grep-nvb '" s "'" )))
 
 
 (defun nvb-runtest (s) "Test project."
@@ -78,3 +78,4 @@ s )))
 (global-set-key "\C-ct" 'nvb-runtest)
 (global-set-key "\C-c\C-s" 'nvb-tidy-and-statler) 
 (global-set-key "\C-cw" 'project-switch-file-with-test)
+(global-set-key [(meta tab)] 'project-switch-file-with-test)
