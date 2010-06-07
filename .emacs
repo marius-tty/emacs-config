@@ -56,12 +56,12 @@
 
 (global-set-key "\C-l" 'compile)
 (global-set-key "\C-q"  'viper-intercept-ESC-key)
-(global-set-key "\C-c\C-v" 'magit-status)
+(global-set-key "\C-cv" 'magit-status)
 
 ;; Viper mode stuff
 (setq viper-mode t)
 (require 'viper)
-(define-key viper-vi-intercept-map "e" 'next-error)
+(define-key viper-vi-intercept-map "e" 'next-error-select)
 
 (defalias 'perl-mode 'cperl-mode)
 (setq compilation-scroll-output t)
@@ -84,3 +84,35 @@
 ;; yasnippet
 (require 'yasnippet)
 
+;; other
+(defun revert-all-buffers () "Replace text of all open buffers with the text of the corresponding visited file on disk."
+  (interactive)
+  (when (y-or-n-p "Revert all buffers? ")
+    (let* ((list (buffer-list)) (buffer (car list)))
+      (while buffer
+        (when (buffer-file-name buffer)
+          (set-buffer buffer)
+          (revert-buffer t t t)
+        )
+        (setq list (cdr list))
+        (setq buffer (car list))
+      )
+    )
+  )
+)
+
+(setq next-error-highlight 5)
+
+(defun next-error-select () "Visit next 'next-error' message and corresponding source code. + highlight the line"
+  (interactive)
+  (next-error-no-select)
+  (hl-line-mode t)
+  (other-window 1)
+  )
+
+(defun previous-error-select () "Visit previous 'next-error' message and corresponding source code. + highlight the line"
+  (interactive)
+  (previous-error-no-select)
+  (hl-line-mode t)
+  (other-window 1)
+  )
