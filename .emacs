@@ -119,3 +119,7 @@
 (load-file "/home/marius/git/emacs-config/emacs.d/misc.el")
 (load-file "/home/marius/git/emacs-config/emacs.d/keymap.el")
 
+;; Always split vertically
+(setq-default split-height-threshold nil)
+(setq-default split-width-threshold 0)
+
