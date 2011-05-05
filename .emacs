@@ -77,20 +77,6 @@
 
 (setq next-error-highlight 5)
 
-(defun next-error-select () "Visit next 'next-error' message and corresponding source code. + highlight the line"
-  (interactive)
-  (next-error-no-select)
-  (hl-line-mode t)
-  (other-window 1)
-  )
-
-(defun previous-error-select () "Visit previous 'next-error' message and corresponding source code. + highlight the line"
-  (interactive)
-  (previous-error-no-select)
-  (hl-line-mode t)
-  (other-window 1)
-  )
-
 (put 'upcase-region 'disabled nil)
 
 (defun load-nvb ()
@@ -118,6 +104,7 @@
 
 (load-file "/home/marius/git/emacs-config/emacs.d/misc.el")
 (load-file "/home/marius/git/emacs-config/emacs.d/keymap.el")
+(load-file "/home/marius/git/emacs-config/emacs.d/overrides.el")
 
 ;; Always split vertically
 (setq-default split-height-threshold nil)
