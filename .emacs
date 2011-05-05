@@ -54,16 +54,9 @@
 (which-function-mode t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(global-set-key "\C-l" 'compile)
-(global-set-key "\C-q"  'viper-intercept-ESC-key)
-(global-set-key "\C-cv" 'magit-status)
-;(global-set-key (kbd "<f12>") 'toggle-viper-mode)
-
 ;; Viper mode stuff
 (setq viper-mode t)
 (require 'viper)
-(define-key viper-vi-intercept-map "e" 'next-error-select)
-(define-key viper-vi-intercept-map "E" 'previous-error-select)
 
 (defalias 'perl-mode 'cperl-mode)
 (setq compilation-scroll-output t)
@@ -74,32 +67,13 @@
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-
 ;; remember mode
 (org-remember-insinuate)
 (setq org-directory "~/orgfiles/")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
-(define-key global-map "\C-cr" 'org-remember)
 
 ;; yasnippet
 (require 'yasnippet)
-
-;; other
-(defun revert-all-buffers () "Replace text of all open buffers with the text of the corresponding visited file on disk."
-  (interactive)
-  (when (y-or-n-p "Revert all buffers? ")
-    (let* ((list (buffer-list)) (buffer (car list)))
-      (while buffer
-        (when (buffer-file-name buffer)
-          (set-buffer buffer)
-          (revert-buffer t t t)
-        )
-        (setq list (cdr list))
-        (setq buffer (car list))
-      )
-    )
-  )
-)
 
 (setq next-error-highlight 5)
 
@@ -148,9 +122,34 @@
 ;(setq split-width-threshold nil)
 ;(setq split-height-threshold 0)
 
-;; Wanderlust config
-(load-file "/home/marius/git/emacs-config/emacs.d/wanderlust.el")
 (put 'narrow-to-region 'disabled nil)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
+
+(load-file "/home/marius/git/emacs-config/emacs.d/keymap.el")
+
+;; helper functions
+(defun revert-all-buffers () "Replace text of all open buffers with the text of the corresponding visited file on disk."
+  (interactive)
+  (when (y-or-n-p "Revert all buffers? ")
+    (let* ((list (buffer-list)) (buffer (car list)))
+      (while buffer
+        (when (buffer-file-name buffer)
+          (set-buffer buffer)
+          (revert-buffer t t t)
+        )
+        (setq list (cdr list))
+        (setq buffer (car list))
+      )
+    )
+  )
+)
+
+(defun perl-sub-list () "Display links to all sub's in a buffer."
+  (interactive)
+  (list-matching-lines "^[[:blank:]]*sub[[:blank:]]")
+)
+
+
+
