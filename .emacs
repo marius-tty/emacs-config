@@ -23,17 +23,6 @@
  '(tool-bar-mode nil)
  '(transient-mark-mode t)
  )
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(diff-added ((t (:inherit diff-changed :foreground "darkgreen"))))
- '(diff-changed ((nil (:foreground "darkblue"))))
- '(diff-indicator-added ((t (:inherit diff-added :foreground "darkgreen"))))
- '(diff-indicator-changed ((t (:inherit diff-changed :foreground "blue"))))
- '(diff-indicator-removed ((t (:inherit diff-removed :foreground "darkred"))))
- '(diff-removed ((t (:inherit diff-changed :foreground "darkred")))))
 
 (setq-default truncate-partial-width-windows nil)
 (set-default-font '"-adobe-courier-medium-r-normal--18-*-*-*-*-*-*-*")
