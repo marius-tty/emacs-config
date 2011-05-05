@@ -4,7 +4,8 @@
   (when (y-or-n-p "Revert all buffers? ")
     (let* ((list (buffer-list)) (buffer (car list)))
       (while buffer
-        (when (buffer-file-name buffer)
+        (when (and (buffer-file-name buffer)
+                   (file-exists-p (buffer-file-name buffer)))
           (set-buffer buffer)
           (revert-buffer t t t)
         )
