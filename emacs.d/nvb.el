@@ -65,7 +65,9 @@ s )))
 (defun nvb-tidy-and-statler ()
   (interactive "")
   (let ((compilation-buffer-name-function (lambda (foo) "*tidy-and-statler-modified*")))
-    (compile (concat "cd " (nvb-base) " && . ./export_env && ./tidy_and_statler_modified" ))))
+    (compile (concat "cd " (nvb-base) " && . ./export_env && ./tidy_and_statler_modified" )))
+  (revert-all-buffers)
+)
 
 ;; autoload mason.
 ;(add-to-list 'auto-mode-alist '( (concat "\\`" (nvb-base) "/Www/") . html-mode))
