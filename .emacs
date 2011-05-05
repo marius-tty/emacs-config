@@ -111,45 +111,11 @@
 (setq auto-mode-alist
       (append '(("\\.tt$" . tt-mode))  auto-mode-alist ))
 
-
-; from the documentation of split-window-sensibly
-;; In order to not split WINDOW vertically, set (or bind) the
-;; variable `split-height-threshold' to nil.  Additionally, you can
-;; set `split-width-threshold' to zero to make a horizontal split
-;; more likely to occur.
-
-; TODO: this doesn't seem to work
-;(setq split-width-threshold nil)
-;(setq split-height-threshold 0)
-
 (put 'narrow-to-region 'disabled nil)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 
+(load-file "/home/marius/git/emacs-config/emacs.d/misc.el")
 (load-file "/home/marius/git/emacs-config/emacs.d/keymap.el")
-
-;; helper functions
-(defun revert-all-buffers () "Replace text of all open buffers with the text of the corresponding visited file on disk."
-  (interactive)
-  (when (y-or-n-p "Revert all buffers? ")
-    (let* ((list (buffer-list)) (buffer (car list)))
-      (while buffer
-        (when (buffer-file-name buffer)
-          (set-buffer buffer)
-          (revert-buffer t t t)
-        )
-        (setq list (cdr list))
-        (setq buffer (car list))
-      )
-    )
-  )
-)
-
-(defun perl-sub-list () "Display links to all sub's in a buffer."
-  (interactive)
-  (list-matching-lines "^[[:blank:]]*sub[[:blank:]]")
-)
-
-
 
