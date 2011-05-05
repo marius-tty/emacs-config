@@ -6,22 +6,9 @@
  '(auto-save-default nil)
  '(backup-by-copying nil)
  '(confirm-kill-emacs (quote yes-or-no-p))
- '(cperl-break-one-line-blocks-when-indent nil)
- '(cperl-clobber-lisp-bindings t)
- '(cperl-close-paren-offset -4)
- '(cperl-electric-linefeed t)
- '(cperl-font-lock t)
- '(cperl-hairy nil)
- '(cperl-indent-level 4)
- '(cperl-indent-parens-as-block t)
- '(cperl-indent-wrt-brace nil)
- '(cperl-lazy-help-time 2)
- '(cperl-lineup-step 4)
- '(cperl-under-as-char t)
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
- '(perl-indent-level 4)
  '(ps-font-size (quote (10 . 10)))
  '(ps-header-font-size (quote (8 . 10)))
  '(ps-header-title-font-size (quote (10 . 12)))
@@ -58,7 +45,6 @@
 (setq viper-mode t)
 (require 'viper)
 
-(defalias 'perl-mode 'cperl-mode)
 (setq compilation-scroll-output t)
 (require 'inf-haskell)
 
@@ -102,11 +88,11 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 
-(load-file "/home/marius/git/emacs-config/emacs.d/misc.el")
-(load-file "/home/marius/git/emacs-config/emacs.d/keymap.el")
-(load-file "/home/marius/git/emacs-config/emacs.d/overrides.el")
-
 ;; Always split vertically
 (setq-default split-height-threshold nil)
 (setq-default split-width-threshold 0)
 
+(load-file "/home/marius/git/emacs-config/emacs.d/perl.el")
+(load-file "/home/marius/git/emacs-config/emacs.d/misc.el")
+(load-file "/home/marius/git/emacs-config/emacs.d/keymap.el")
+(load-file "/home/marius/git/emacs-config/emacs.d/overrides.el")

@@ -16,8 +16,3 @@
   )
 )
 
-(defun perl-sub-list () "Display links to all sub's in a buffer."
-  (interactive)
-  (list-matching-lines "^[[:blank:]]*sub[[:blank:]]")
-)
-
