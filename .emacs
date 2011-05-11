@@ -78,8 +78,8 @@
 (setq uniquify-buffer-name-style 'reverse)
 
 ;; Always split vertically
-(setq-default split-height-threshold nil)
-(setq-default split-width-threshold 0)
+;(setq-default split-height-threshold nil)
+;(setq-default split-width-threshold 0)
 
 (load-file "/home/marius/git/emacs-config/emacs.d/perl.el")
 (load-file "/home/marius/git/emacs-config/emacs.d/misc.el")

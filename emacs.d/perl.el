@@ -1,6 +1,6 @@
 ;; Perl settings & tools
 
-(setq-default cperl-indent-level 5)
+(setq-default cperl-indent-level 4)
 (setq-default cperl-break-one-line-blocks-when-indent nil)
 (setq-default cperl-clobber-lisp-bindings t)
 (setq-default cperl-close-paren-offset -4)
