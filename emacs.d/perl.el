@@ -12,6 +12,8 @@
 (setq-default cperl-lazy-help-time 2)
 (setq-default cperl-lineup-step 4)
 (setq-default cperl-under-as-char t)
+(setq-default cperl-electric-parens nil)
+(setq cperl-auto-newline nil)
 
 (setq-default perl-indent-level 4)
 

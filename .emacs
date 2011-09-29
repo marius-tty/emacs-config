@@ -73,6 +73,7 @@
       (append '(("\\.tt$" . tt-mode))  auto-mode-alist ))
 
 (put 'narrow-to-region 'disabled nil)
+(setq inhibit-startup-message t)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
@@ -85,3 +86,6 @@
 (load-file "/home/marius/git/emacs-config/emacs.d/misc.el")
 (load-file "/home/marius/git/emacs-config/emacs.d/keymap.el")
 (load-file "/home/marius/git/emacs-config/emacs.d/overrides.el")
+
+(require 'linum)
+(global-linum-mode 1)                       ; line numbers everywhere
