@@ -18,7 +18,7 @@
 ;(global-set-key "\C-c\C-c" 'twh-dwim)
 (global-set-key "\C-c\C-r" 'twh-restart)
 (global-set-key "\C-c\C-b" 'twh-rebuild-js-and-css)
-(global-set-key "\C-c\C-s" 'twh-tidy-and-statler)
+(global-set-key "\C-c\C-s" 'twh-tidy-dwim)
 
 ; other
 (define-key global-map "\C-cr" 'org-remember)
