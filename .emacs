@@ -25,7 +25,9 @@
  )
 
 (setq-default truncate-partial-width-windows nil)
-(set-default-font '"-adobe-courier-medium-r-normal--18-*-*-*-*-*-*-*")
+;(set-default-font '"-adobe-courier-medium-r-normal--18-*-*-*-*-*-*-*")
+;(set-default-font '"-unknown-Anonymous Pro-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
+(set-default-font '"-unknown-Inconsolata-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
 
 (which-function-mode t)
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -88,4 +90,5 @@
 (load-file "/home/marius/git/emacs-config/emacs.d/overrides.el")
 
 (require 'linum)
-(global-linum-mode 1)                       ; line numbers everywhere
+;(global-linum-mode 1)                       ; line numbers everywhere
+(global-linum-mode nil)                       ; line numbers everywhere
