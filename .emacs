@@ -80,10 +80,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 
-;; Always split vertically
-;(setq-default split-height-threshold nil)
-;(setq-default split-width-threshold 0)
-
 (load-file "/home/marius/git/emacs-config/emacs.d/perl.el")
 (load-file "/home/marius/git/emacs-config/emacs.d/misc.el")
 (load-file "/home/marius/git/emacs-config/emacs.d/keymap.el")
@@ -92,3 +88,8 @@
 (require 'linum)
 ;(global-linum-mode 1)                       ; line numbers everywhere
 (global-linum-mode nil)                       ; line numbers everywhere
+
+;; https://github.com/sellout/emacs-color-theme-solarized.git
+(setq load-path
+      (cons "/home/marius/git/emacs-color-theme-solarized/" load-path))
+(require 'color-theme-solarized)
