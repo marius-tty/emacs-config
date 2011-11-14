@@ -93,3 +93,4 @@
 (setq load-path
       (cons "/home/marius/git/emacs-color-theme-solarized/" load-path))
 (require 'color-theme-solarized)
+(color-theme-solarized-light)
