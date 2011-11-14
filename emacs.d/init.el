@@ -25,9 +25,6 @@
  )
 
 (setq-default truncate-partial-width-windows nil)
-;(set-default-font '"-adobe-courier-medium-r-normal--18-*-*-*-*-*-*-*")
-;(set-default-font '"-unknown-Anonymous Pro-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
-(set-default-font '"-unknown-Inconsolata-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
 
 (which-function-mode t)
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -81,12 +78,7 @@
 ;(global-linum-mode 1)                       ; line numbers everywhere
 (global-linum-mode nil)                       ; line numbers everywhere
 
-;; https://github.com/sellout/emacs-color-theme-solarized.git
-(setq load-path
-      (cons "/home/marius/git/emacs-color-theme-solarized/" load-path))
-(require 'color-theme-solarized)
-(color-theme-solarized-light)
-
+(require 'appearance)
 (require 'perl)
 (require 'misc)
 (require 'overrides)
