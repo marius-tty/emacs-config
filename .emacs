@@ -59,7 +59,7 @@
 (defun load-nvb ()
   "Load the nvb environment"
   (interactive)
-  (load-file "/home/marius/git/emacs-config/emacs.d/nvb.el")
+  (load-file "/home/marius/git/emacs-config/emacs.d/elisp/nvb.el")
   )
 
 (defun load-twh ()
@@ -80,10 +80,10 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 
-(load-file "/home/marius/git/emacs-config/emacs.d/perl.el")
-(load-file "/home/marius/git/emacs-config/emacs.d/misc.el")
-(load-file "/home/marius/git/emacs-config/emacs.d/keymap.el")
-(load-file "/home/marius/git/emacs-config/emacs.d/overrides.el")
+(load-file "/home/marius/git/emacs-config/emacs.d/elisp/perl.el")
+(load-file "/home/marius/git/emacs-config/emacs.d/elisp/misc.el")
+(load-file "/home/marius/git/emacs-config/emacs.d/elisp/keymap.el")
+(load-file "/home/marius/git/emacs-config/emacs.d/elisp/overrides.el")
 
 (require 'linum)
 ;(global-linum-mode 1)                       ; line numbers everywhere
