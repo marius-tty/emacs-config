@@ -56,12 +56,6 @@
 
 (put 'upcase-region 'disabled nil)
 
-(defun load-nvb ()
-  "Load the nvb environment"
-  (interactive)
-  (load-file "/home/marius/git/emacs-config/emacs.d/elisp/nvb.el")
-  )
-
 (defun load-twh ()
   "Load the twh environment"
   (interactive)
@@ -80,10 +74,8 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 
-(load-file "/home/marius/git/emacs-config/emacs.d/elisp/perl.el")
-(load-file "/home/marius/git/emacs-config/emacs.d/elisp/misc.el")
-(load-file "/home/marius/git/emacs-config/emacs.d/elisp/keymap.el")
-(load-file "/home/marius/git/emacs-config/emacs.d/elisp/overrides.el")
+(add-to-list 'load-path (concat user-emacs-directory
+                                (convert-standard-filename "elisp/")))
 
 (require 'linum)
 ;(global-linum-mode 1)                       ; line numbers everywhere
@@ -94,3 +86,8 @@
       (cons "/home/marius/git/emacs-color-theme-solarized/" load-path))
 (require 'color-theme-solarized)
 (color-theme-solarized-light)
+
+(require 'perl)
+(require 'misc)
+(require 'overrides)
+(require 'keymap)

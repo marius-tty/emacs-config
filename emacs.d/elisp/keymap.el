@@ -26,3 +26,4 @@
 ;; git stuff
 (global-set-key "\C-cv" 'magit-status)
 
+(provide 'keymap)

@@ -23,3 +23,6 @@
   (interactive)
   (list-matching-lines "^[[:blank:]]*sub[[:blank:]]")
 )
+
+(provide 'perl)
+
