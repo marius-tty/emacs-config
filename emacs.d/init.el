@@ -76,7 +76,7 @@
 
 (require 'linum)
 ;(global-linum-mode 1)                       ; line numbers everywhere
-(global-linum-mode nil)                       ; line numbers everywhere
+(global-linum-mode 0)                       ; line numbers everywhere
 
 (require 'appearance)
 (require 'perl)
