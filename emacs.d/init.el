@@ -81,5 +81,4 @@
 (require 'appearance)
 (require 'perl)
 (require 'misc)
-(require 'overrides)
 (require 'keymap)

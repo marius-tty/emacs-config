@@ -16,5 +16,10 @@
   )
 )
 
+(add-hook 'next-error-hook '
+  (lambda ()
+    (with-current-buffer next-error-last-buffer (hl-line-mode 1))
+  )
+)
 
 (provide 'misc)

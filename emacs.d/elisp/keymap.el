@@ -1,8 +1,8 @@
 ;; Key mappings
 
 ;; Navigation
-(define-key viper-vi-intercept-map "e" 'next-error-select)
-(define-key viper-vi-intercept-map "E" 'previous-error-select)
+(define-key viper-vi-intercept-map "e" 'next-error)
+(define-key viper-vi-intercept-map "E" 'previous-error)
 
 ;; viper
 (global-set-key "\C-q"  'viper-intercept-ESC-key)
