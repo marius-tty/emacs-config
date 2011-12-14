@@ -68,16 +68,10 @@
 (put 'narrow-to-region 'disabled nil)
 (setq inhibit-startup-message t)
 
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'reverse)
-
 (add-to-list 'load-path (concat user-emacs-directory
                                 (convert-standard-filename "elisp/")))
 
-(require 'linum)
-;(global-linum-mode 1)                       ; line numbers everywhere
-(global-linum-mode 0)                       ; line numbers everywhere
-
+(require 'navigation)
 (require 'appearance)
 (require 'perl)
 (require 'misc)
