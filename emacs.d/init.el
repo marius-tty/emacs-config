@@ -9,7 +9,7 @@
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
- '(ps-font-size (quote (10 . 10)))
+ '(ps- font-size (quote (9 . 9)))
  '(ps-header-font-size (quote (8 . 10)))
  '(ps-header-title-font-size (quote (10 . 12)))
  '(ps-left-footer (quote (ps-get-buffer-name)))
@@ -56,7 +56,7 @@
 (defun load-twh ()
   "Load the twh environment"
   (interactive)
-  (load-file "/home/marius/git/twh/setup/devenv/marius/twh.el")
+  (require 'twh)
   )
 
 (setq load-path
