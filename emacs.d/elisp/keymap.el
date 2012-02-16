@@ -15,7 +15,7 @@
 (global-set-key "\C-cg" 'twh-grep)
 (global-set-key "\C-c\S-g" 'twh-igrep)
 (global-set-key "\C-c\C-c" 'twh-compile)
-(global-set-key "\C-ct" 'twh-twh-prove)
+(global-set-key "\C-ct" 'twh-twh-prove-current-buffer)
 ;(global-set-key "\C-c\C-c" 'twh-dwim)
 (global-set-key "\C-c\C-r" 'twh-restart)
 (global-set-key "\C-c\C-b" 'twh-rebuild-js-and-css)
