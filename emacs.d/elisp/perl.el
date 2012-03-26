@@ -24,12 +24,11 @@
   (interactive)
   (list-matching-lines "^[[:blank:]]*sub[[:blank:]]"))
 
-
 (defun cperl-indent-line-or-region (&optional arg) "If a region is marked, indent region in CPerl mode, else indent current line as Perl code."
-  (interactive "P")
-  (if (and (not arg) mark-active)
-    (cperl-indent-region (mark) (point))
-    (cperl-indent-command (prefix-numeric-value arg))))
+   (interactive "P")
+   (if (and (not arg) mark-active)
+       (cperl-indent-region (mark) (point))
+     (cperl-indent-command arg)))
 
 (provide 'perl)
 
