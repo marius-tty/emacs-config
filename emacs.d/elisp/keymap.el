@@ -20,6 +20,15 @@
 (global-set-key "\C-c\C-r" 'twh-restart)
 (global-set-key "\C-c\C-b" 'twh-rebuild-js-and-css)
 (global-set-key "\C-c\C-s" 'twh-tidy-dwim)
+(global-set-key "\C-c\C-t" 'twh-set-testbuffer)
+(global-set-key "\C-c\C-p" 'twh-twh-prove-testbuffer)
+
+(add-hook 'cperl-mode-hook
+          '(lambda ()
+             (define-key cperl-mode-map "\C-c\C-t" 'twh-set-testbuffer)))
+(add-hook 'cperl-mode-hook
+          '(lambda ()
+             (define-key cperl-mode-map "\C-c\C-p" 'twh-twh-prove-testbuffer)))
 
 ; other
 (define-key global-map "\C-cr" 'org-remember)
