@@ -2,13 +2,13 @@
 (eval-after-load "cperl-mode"
   '(progn
      (substitute-key-definition 'cperl-indent-command 'cperl-indent-line-or-region cperl-mode-map)
+     (setq-default cperl-hairy nil) ; First thing to do so overrides work
      (setq-default cperl-indent-level 4)
      (setq-default cperl-break-one-line-blocks-when-indent nil)
      (setq-default cperl-clobber-lisp-bindings t)
      (setq-default cperl-close-paren-offset -4)
-     (setq-default cperl-electric-linefeed t)
      (setq-default cperl-font-lock t)
-     (setq-default cperl-hairy nil)
+     (setq-default cperl-electric-linefeed nil)
      (setq-default cperl-indent-parens-as-block t)
      (setq-default cperl-indent-wrt-brace nil)
      (setq-default cperl-lazy-help-time 2)
