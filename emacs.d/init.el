@@ -9,7 +9,7 @@
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
  '(menu-bar-mode nil)
- '(ps- font-size (quote (9 . 9)))
+ '(ps-font-size (quote (9 . 9)))
  '(ps-header-font-size (quote (8 . 10)))
  '(ps-header-title-font-size (quote (10 . 12)))
  '(ps-left-footer (quote (ps-get-buffer-name)))
@@ -34,7 +34,7 @@
 (require 'viper)
 
 (setq compilation-scroll-output t)
-(require 'inf-haskell)
+;(require 'inf-haskell)
 
 ;; js2-mode
 ;;(load-file ".emacs.d/js2-20090723b.el")
